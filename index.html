@@ -372,21 +372,123 @@
             <section>
                 <p>h</p>
             </section>
-            <section>
-                <iframe width="1232" height="693" src="https://www.youtube.com/embed/PE2YZhcC4NY?si=bwE1-ufDS44Aq3s_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                <div style="text-align: center;">
-                    <img
-                    src="images/mc_icon.png"
-                    alt="huh"
-                    width="420"
-                    height="420"
-                    />
-                    <img
-                    src="images/huh.png"
-                    alt="huh"
-                    width="420"
-                    height="420"
-                    />
+            <section class="background">
+                <nav class="bar"></nav>
+
+                <div class="image-text-container">
+                    <img src="images/very-cute-cat.png" width="75px" height="75px"/>
+                    <h2>/AdmiralGamerCat</h2>
+                </div>
+
+                <div class="buttons-container">
+                    <button class="main-button">
+                        main.py
+                    </button>
+
+                    <button class="readme-button">
+                        README.md
+                    </button>
+
+                    <button class="run-code-button" id="btn" onclick="displayMessage()"></button>
+                        <img src="images/run-button-icon.png" height="30px" width="30px">
+                    </button>
+                </div>
+
+                <div class="bar">
+                    <p>
+                        <span class="line_number">1 </span><span class="variable">username</span><span> = </span><span class="string">"<input class="input_box" type="text" id="username" placeholder="AdmiralGamerCat" size="11"/>"</span>
+                    </p>
+
+                    <p>
+                        <span class="line_number">2 </span><span class="variable">image</span><span> = <span class="string">"images/<input class="input_box" type="text" id="image" placeholder="very-cute-cat.png"/>"</span>
+                    </p>
+
+                    <p>
+                        <span class="line_number">3 </span>
+                    </p>
+            
+                    <p>
+                        <span class="line_number">4 </span><span class="function">print</span><span class="bracket">(</span><span class="value">f</span><span class="string">"hello</span><span class="curly_bracket"> {</span><span class="variable">username</span><span class="curly_bracket">}</span><span class="string">!"</span><span class="bracket">)
+                    </p>
+
+                    <p>
+                        <span class="line_number">5 </span><span class="function">print</span><span class="bracket">(</span><span class="variable">image</span><span class="bracket">)</span><span class="comment hidden"> # I know it should print "images/...", but this is more fun :D.</span>
+                    </p>
+
+                    <script>
+                        const imageList = {
+                            "very-cute-cat.png": "images/very-cute-cat.png",
+                            "mc-icon.png": "images/mc-icon.png",
+                            "boids.gif": "images/boids.gif",
+                            "BorgzTDC_emblem.png": "images/BorgzTDC_emblem.png",
+                            "conway.gif": "images/conway.gif",
+                            "ditiseenafbeelding.png": "images/ditiseenafbeelding.png",
+                            "favicon.png": "images/favicon.png",
+                            "ferret.jpg": "images/ferret.jpg",
+                            "ferret-cursor.png": "images/ferret-cursor.png",
+                            "ferret-sleepy-yawn.gif": "images/ferret-sleepy-yawn.gif",
+                            "adhd-comic.jpg": "images/funny-adhdinos-comics-30-608x608.jpg",
+                            "goober.gif": "images/goober.gif",
+                            "huh.gif": "images/huh.gif",
+                            "hzd.webp": "images/hzd.webp",
+                            "mochi-cat.jpg": "images/mochi-cat.jpg",
+                            "monke.jpg": "images/monke.jpg",
+                            "noot.gif": "images/noot.gif",
+                            "Optimus-Prime.jpg": "images/Optimus-Prime.jpg",
+                            "perenijsje.jpeg": "images/perenijsje.jpeg",
+                            "poes.jpg": "images/poes.jpg",
+                            "polite-cat.jpg": "images/polite-cat.jpg",
+                            "Ratatouille.jpg": "images/ratbeeld[23539].v3-VOANEWSDETAIL_62.jpg",
+                            "run-button-icon.png": "images/run-button-icon.png",
+                            "Suikoden-II-HD-Remaster.jpg": "images/Suikoden-II-HD-Remaster.jpg",
+                            "TQqwfCxg.png": "images/TQqwfCxg.png",
+                            "vukovi.jpg": "images/vukovi.jpg",
+                            "PSV.png": "https://upload.wikimedia.org/wikipedia/en/thumb/0/05/PSV_Eindhoven.svg/1200px-PSV_Eindhoven.svg.png",
+                            "Geoorde-fuut.jpg": "https://waarnemingen.be/media/photo/1147658.jpg"
+
+                        };
+
+                        let currentIndex = 0;
+                        const fileNames = Object.keys(imageList);
+
+                        // Function to update the placeholder with image names
+                        function updatePlaceholder() {
+                            const input = document.getElementById('image');
+                            input.placeholder = fileNames[currentIndex];
+                            currentIndex = (currentIndex + 1) % fileNames.length;
+                        }
+
+                    
+                        // Function to display the message and image
+                        function displayMessage() {
+                            const usernameInput = document.getElementById('username').value;
+                            const imageInput = document.getElementById('image').value;
+                    
+                            const username = usernameInput.trim() === "" ? "AdmiralGamerCat" : usernameInput;
+                    
+                            document.getElementById('message').textContent = `hello ${username}!`;
+                    
+                            const imageElement = document.getElementById('displayedImage');
+                            const commentElement = document.querySelector('.bar .comment');
+                    
+                            if (imageList[imageInput]) {
+                                imageElement.src = imageList[imageInput];
+                                imageElement.style.display = 'block';
+                                commentElement.style.display = 'inline'; 
+                            } else {
+                                imageElement.style.display = 'none';
+                                commentElement.style.display = 'none'; 
+                            }
+                        }
+
+                        // Set placeholder update interval
+                        setInterval(updatePlaceholder, 2000);
+                    </script>
+                </div>
+                <p>output:</p>
+                <div class="bar">
+                    <p id="message"></p>
+                    <img id="displayedImage" style="display: none;" alt="Image">
                 </div>
             </section>
         </div>
