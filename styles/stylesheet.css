@@ -109,13 +109,6 @@ section {
 }
 
 /* Hidde's css */
-@font-face {
-    font-family: 'Cascadia Mono';
-    src: url("../fonts/woff2/CascadiaCode.woff2") format("woff2");
-    font-weight: normal;
-    font-style: normal;
-}
-
 .background {
     color: whitesmoke;
     background-color: #181818;
@@ -123,39 +116,72 @@ section {
     font-family: "Cascadia Mono", sans-serif;
 }
 
-.function {
-    color: #DBDCB0;
+.buttons-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 5px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 5px;
+    border-radius: 8px;
+    font-size: 17px;
+    font-weight: 500;
+    color: #ffffff80;
+    text-shadow: none;
+    background: transparent;
+    cursor: pointer;
+    border: 1px solid #707680;
+    transition: 0.5s ease;
+    user-select: none;
     font-family: "Cascadia Mono", sans-serif;
 }
 
-.bracket {
-    color: #F3D84B;
-    font-family: "Cascadia Mono", sans-serif;
+button:focus {
+    color: #ffffff;
+    background: #008cff;
+    border: 1px solid #008cff;
+    text-shadow: 0 0 5px #ffffff, 0 0 20px #ffffff;
+    box-shadow: 0 0 5px #008cff, 0 0 20px #008cff, 0 0 50px #008cff;
 }
 
-.string {
-    color: #C0937C;
-    font-family: "Cascadia Mono", sans-serif;
+button img {
+    vertical-align: middle;
 }
 
-.variable {
-	color: #B1DBFA;
-    font-family: "Cascadia Mono", sans-serif;
+.run-code-button {
+    margin-left: auto;
+    height: 30px;
+    width: 30px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
 }
 
-.value {
-	color: #719BD1;
-    font-family: "Cascadia Mono", sans-serif;
+.run-code-button img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
 }
 
-.curly_bracket {
-	color: #C777D0;
-    font-family: "Cascadia Mono", sans-serif;
+.active-glow {
+    color: #ffffff;
+    background: #008cff;
+    border: 1px solid #008cff;
+    text-shadow: 0 0 5px #ffffff, 0 0 20px #ffffff;
+    box-shadow: 0 0 5px #008cff, 0 0 20px #008cff, 0 0 50px #008cff;
 }
 
-.comment {
-	color: #699855;
-    font-family: "Cascadia Mono", sans-serif;
+.image-text-container {
+    display: flex;
+    align-items: center;
+}
+
+.image-text-container img {
+    margin-right: 10px;
 }
 
 .input_box {
@@ -167,92 +193,45 @@ section {
 }
 
 .input_box::placeholder {
-    color: #C0937C; 
-}
-
-.line_number {
-    color: #707680
-}
-
-#message {
-    color:whitesmoke;
+    color: #C0937C;
 }
 
 .bar {
     background-color: #1f1f1f;
 }
 
+.line_number {
+    color: #707680;
+}
+
+.function {
+    color: #DBDCB0;
+}
+
+.bracket {
+    color: #F3D84B;
+}
+
+.string {
+    color: #C0937C;
+}
+
+.variable {
+    color: #B1DBFA;
+}
+
+.value {
+    color: #719BD1;
+}
+
+.curly_bracket {
+    color: #C777D0;
+}
+
+.comment {
+    color: #699855;
+}
+
 .hidden {
     display: none;
-}
-.visible {
-    display: inline;
-}
-
-button {
-    position: sticky;
-    padding: 5px ;
-    border-radius: 8px;
-    font-size: 17px;
-    font-weight: 500;
-    color: #ffffff80;
-    text-shadow: none;
-    background: transparent;
-    cursor: pointer;
-    box-shadow: transparent;
-    border: 1px solid #707680;
-    transition: 0.5s ease;
-    user-select: none;
-    font-family: "Cascadia Mono", sans-serif;
-  }
-  
-  #btn:hover,
-  :focus {
-    color: #ffffff;
-    background: #008cff;
-    border: 1px solid #008cff;
-    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
-    box-shadow: 0 0 5px #008cff, 0 0 20px #008cff, 0 0 50px #008cff,
-      0 0 100px #008cff;
-  }
-
-.main-button {
-    color: whitesmoke;
-}
-
-.readme-button {
-    color: whitesmoke;
-}
-
-.image-text-container {
-    display: flex;
-    align-items: center; /* Vertically align the text in the middle */
-}
-
-.image-text-container img {
-    margin-right: 10px; /* Adds some space between the image and the text */
-}
-
-.buttons-container {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding-top: 5px;
-    position: relative;
-    width: 100%;
-}
-
-.run-code-button {
-    margin-left: auto;            /* Pushes the larger button to the far right */
-    height: 30px;                 /* Set the desired size for the larger button */
-    width: 30px;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-}
-
-.run-code-button img {
-    height: 100%;
-    width: 100%;
-    object-fit: contain;          /* Ensures the image fits properly */
 }
