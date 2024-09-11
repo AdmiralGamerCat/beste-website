@@ -372,113 +372,128 @@
             <section>
                 <p>h</p>
             </section>
-            <section class="background">
-                <nav class="bar"></nav>
+            <section class="background2">
+                <nav class="nav-bar"></nav>
             
-                <div class="image-text-container">
-                    <img src="images/very-cute-cat.png" width="75px" height="75px" />
+                <div class="user-info">
+                    <img src="images/very-cute-cat.png" width="75px" height="75px"/>
                     <h2>/AdmiralGamerCat</h2>
                 </div>
             
-                <div class="buttons-container">
-                    <button class="main-button active-glow" onclick="switchScreen('main')">
+                <div class="button-group">
+                    <button class="main-screen-button active-glow" onclick="switchScreen('mainScreen')">
                         main.py
                     </button>
             
-                    <button class="readme-button" onclick="switchScreen('readme')">
+                    <button class="readme-screen-button" onclick="switchScreen('readmeScreen')">
                         README.md
                     </button>
             
-                    <button class="run-code-button" id="btn" onclick="displayMessage()">
+                    <button class="run-code-button" id="runBtn" onclick="displayMessage()">
                         <img src="images/run-button-icon.png" height="30px" width="30px" />
                     </button>
                 </div>
             
-                <div class="bar">
+                <div class="code-display-section">
                     <p>
-                        <span class="line_number">1 </span><span class="variable">username</span
-                        ><span> = </span
-                        ><span class="string">"<input class="input_box" type="text" id="username" placeholder="AdmiralGamerCat" size="11" />"</span>
+                        <span class="line-number">1 </span><span class="variable">username</span><span> = </span><span class="string">"<input class="input-box" type="text" id="username" placeholder="AdmiralGamerCat" size="11" />"</span>
                     </p>
             
                     <p>
-                        <span class="line_number">2 </span><span class="variable">image</span
-                        ><span> = </span
-                        ><span class="string">"images/<input class="input_box" type="text" id="image" placeholder="very-cute-cat.png" />"</span>
-                    </p>
-            
-                    <p><span class="line_number">3 </span></p>
-            
-                    <p>
-                        <span class="line_number">4 </span><span class="function">print</span
-                        ><span class="bracket">(</span><span class="value">f</span
-                        ><span class="string">"hello</span
-                        ><span class="curly_bracket"> {</span><span class="variable">username</span
-                        ><span class="curly_bracket">}</span><span class="string">!"</span><span class="bracket">)</span>
+                        <span class="line-number">2 </span><span class="variable">image</span><span> = </span><span class="string">"images/<input class="input-box" type="text" id="image" placeholder="very-cute-cat.png" />"</span>
                     </p>
             
                     <p>
-                        <span class="line_number">5 </span><span class="function">print</span
-                        ><span class="bracket">(</span><span class="variable">image</span
-                        ><span class="bracket">)</span
-                        ><span class="comment hidden"> # I know it should print "images/...", but this is more fun :D.</span>
+                        <span class="line-number">3 </span>
+                    </p>
+            
+                    <p>
+                        <span class="line-number">4 </span><span class="function">print</span><span class="bracket">(</span><span class="value">f</span><span class="string">"hello</span><span class="curly-bracket"> {</span><span class="variable">username</span><span class="curly-bracket">}</span><span class="string">!"</span><span class="bracket">)</span>
+                    </p>
+            
+                    <p>
+                        <span class="line-number">5 </span><span class="function">print</span><span class="bracket">(</span><span class="variable">image</span><span class="bracket">)</span><span class="comment hidden-comment"> # I know it should print "images/...", but this is more fun :D</span>
                     </p>
             
                     <script>
                         const imageList = {
                             "very-cute-cat.png": "images/very-cute-cat.png",
                             "mc-icon.png": "images/mc-icon.png",
-                            // other images...
+                            "boids.gif": "images/boids.gif",
+                            "BorgzTDC_emblem.png": "images/BorgzTDC_emblem.png",
+                            "conway.gif": "images/conway.gif",
+                            "ditiseenafbeelding.png": "images/ditiseenafbeelding.png",
+                            "favicon.png": "images/favicon.png",
+                            "ferret.jpg": "images/ferret.jpg",
+                            "ferret-cursor.png": "images/ferret-cursor.png",
+                            "ferret-sleepy-yawn.gif": "images/ferret-sleepy-yawn.gif",
+                            "adhd-comic.jpg": "images/funny-adhdinos-comics-30-608x608.jpg",
+                            "goober.gif": "images/goober.gif",
+                            "huh.gif": "images/huh.gif",
+                            "hzd.webp": "images/hzd.webp",
+                            "mochi-cat.jpg": "images/mochi-cat.jpg",
+                            "monke.jpg": "images/monke.jpg",
+                            "noot.gif": "images/noot.gif",
+                            "Optimus-Prime.jpg": "images/Optimus-Prime.jpg",
+                            "perenijsje.jpeg": "images/perenijsje.jpeg",
+                            "poes.jpg": "images/poes.jpg",
+                            "polite-cat.jpg": "images/polite-cat.jpg",
+                            "Ratatouille.jpg": "images/ratbeeld[23539].v3-VOANEWSDETAIL_62.jpg",
+                            "run-button-icon.png": "images/run-button-icon.png",
+                            "Suikoden-II-HD-Remaster.jpg": "images/Suikoden-II-HD-Remaster.jpg",
+                            "TQqwfCxg.png": "images/TQqwfCxg.png",
+                            "vukovi.jpg": "images/vukovi.jpg",
+                            "PSV.png": "https://upload.wikimedia.org/wikipedia/en/thumb/0/05/PSV_Eindhoven.svg/1200px-PSV_Eindhoven.svg.png",
+                            "Geoorde-fuut.jpg": "https://waarnemingen.be/media/photo/1147658.jpg"
                         };
             
                         let currentIndex = 0;
                         const fileNames = Object.keys(imageList);
             
-                        // Function to update the placeholder with image names
                         function updatePlaceholder() {
                             const input = document.getElementById('image');
                             input.placeholder = fileNames[currentIndex];
                             currentIndex = (currentIndex + 1) % fileNames.length;
                         }
             
-                        // Function to switch screens
                         function switchScreen(screen) {
-                            const bars = document.querySelectorAll('.bar');
+                            const codeSections = document.querySelectorAll('.code-display-section');
                             const runCodeBtn = document.querySelector('.run-code-button');
                             const outputText = document.getElementById('outputText');
                             const messageText = document.getElementById('message');
                             const displayedImage = document.getElementById('displayedImage');
             
-                            if (screen === 'readme') {
-                                bars.forEach(bar => (bar.style.display = 'none'));
+                            if (screen === 'readmeScreen') {
+                                codeSections.forEach(section => (section.style.display = 'none'));
                                 runCodeBtn.style.display = 'none';
-                                outputText.style.display = 'none'; // Hide output text
-                                messageText.style.display = 'none'; // Hide message
-                                displayedImage.style.display = 'none'; // Hide image as well
-                            } else if (screen === 'main') {
-                                bars.forEach(bar => (bar.style.display = 'block'));
+                                outputText.style.display = 'none'; 
+                                messageText.style.display = 'none'; 
+                                displayedImage.style.display = 'none';
+                            } else if (screen === 'mainScreen') {
+                                codeSections.forEach(section => (section.style.display = 'block'));
                                 runCodeBtn.style.display = 'block';
                                 outputText.style.display = 'block';
                                 messageText.style.display = 'block';
                             }
             
-                            // Update button glowing effect
-                            const buttons = document.querySelectorAll('.buttons-container button');
+                            const buttons = document.querySelectorAll('.button-group button');
                             buttons.forEach(button => button.classList.remove('active-glow'));
                             document.querySelector(`.${screen}-button`).classList.add('active-glow');
                         }
             
-                        // Function to display the message and image
                         function displayMessage() {
                             const usernameInput = document.getElementById('username').value;
                             const imageInput = document.getElementById('image').value;
             
                             const username = usernameInput.trim() === "" ? "AdmiralGamerCat" : usernameInput;
+
+                            // get the current placeholder value from the input box
+                            
             
                             document.getElementById('message').textContent = `hello ${username}!`;
             
                             const imageElement = document.getElementById('displayedImage');
-                            const commentElement = document.querySelector('.bar .comment');
+                            
             
                             if (imageList[imageInput]) {
                                 imageElement.src = imageList[imageInput];
@@ -490,17 +505,17 @@
                             }
                         }
             
-                        // Set placeholder update interval
                         setInterval(updatePlaceholder, 2000);
                     </script>
                 </div>
             
                 <p id="outputText">output:</p>
-                <div class="bar">
+                <div class="code-output-section">
                     <p id="message"></p>
-                    <img id="displayedImage" style="display: none;" alt="Image" />
+                    <img id="displayedImage" style="display: none;" alt="Image"/>
                 </div>
-            </section>            
+            </section>
+   
         </div>
     </body>
 </html>
